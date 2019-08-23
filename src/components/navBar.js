@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom'
 class NavBar extends Component {
     constructor(props) {
         super(props);
@@ -15,13 +15,13 @@ class NavBar extends Component {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                     </button>
-                    <a className="navbar-brand" href="#"><i className="fa fa-square-o "></i>&nbsp;Admin Page</a>
+                    <Link to="/"><i className="fa fa-square-o "></i>&nbsp;Admin Page</Link>
                 </div>
                 <div className="navbar-collapse collapse">
                     <ul className="nav navbar-nav navbar-right">
-                        <li ><img id='profile-img' src="assets/img/find_user.png" className="img-responsive" /><span>MyAdmin</span></li>
-                        <li><a href="#"><i className="bg-primary fas fa-envelope-open-text"></i></a></li>
-                        <li><a href="#">Report Bug</a></li>
+                        <li ><img id='profile-img' src="assets/img/find_user.png" className="img-responsive" alt="user img"/><span>MyAdmin</span></li>
+                        <li>{/*<a href="#"><!--<i className="bg-primary fas fa-envelope-open-text"></i></a>*/}hi</li>
+                        <li>{/*<a href="#">Report Bug</a>*/}</li>
                     </ul>
                 </div>
 

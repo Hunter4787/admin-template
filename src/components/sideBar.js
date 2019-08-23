@@ -12,7 +12,7 @@ class SideBar extends Component {
             <div className="sidebar-collapse">
                 <ul className="nav" id="main-menu">
                     <li className="text-center user-image-back">
-                        <img src="assets/img/find_user.png" className="img-responsive" />
+                        <img src="assets/img/find_user.png" className="img-responsive" alt="user logo"/>
                      
                     </li>
 
@@ -45,30 +45,7 @@ class SideBar extends Component {
                         <Link to='/gerer'><i className="fa fa-sitemap "></i>Gérer Tout<span className="fa arrow"></span></Link>
                         <ul className="nav nav-second-level">
                             <li>
-                                <Link to='/categories'>Catégories<span className="fa arrow"></span></Link>
-                                <ul className="nav nav-third-level">
-                                    <li>
-                                        <Link to='/petit-traveaux'>petit-traveaux</Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/peinture-sol-mur'>peinture-sol-mur</Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/Electricite'>Eléctricité et Eclairage</Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/plomberie'>plomberie, cuisine et salle de bain</Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/jardin'>jardin et extérieur</Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/services'>services généraux</Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/maison-confort'>maisons connecté et confort</Link>
-                                    </li>
-                                 </ul>
+                                <Link to='/categories'>Catégories</Link>
                             </li>
                            
                             <li>

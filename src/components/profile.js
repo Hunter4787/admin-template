@@ -52,6 +52,21 @@ class Profile extends Component {
 							<input className="form-control" defaultValue="Moez H." />
 						</div>
 					</div>
+					<div className="form-group">
+						<div className="col-lg-3">
+							<label>Votre mot de passe</label>
+							<i
+								className="fa fa-exclamation-circle"
+								data-placement="bottom"
+								data-toggle="tooltip"
+								title
+								data-original-title="Vous pouvez modifier Votre mot de passe"
+							/>
+						</div>
+						<div className="col-lg-6">
+							<input className="form-control" type="password" defaultValue="" />
+						</div>
+					</div>
 					<hr />
 					<div className="form-group">
 						<div className="col-lg-3">

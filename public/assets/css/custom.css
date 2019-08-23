@@ -272,6 +272,35 @@ border-radius: 0px;
     border-radius: 2px;
 }
 
+.category-list-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 200px;
+}
+
+.card-container{
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 2px 5px 2px #484848;
+    max-height: 300px;
+    min-height: 300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width:360px) {
+    .cardcontainer{
+        padding-left: 10px;
+    }
+}
+
+.search-category{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 20px auto;
+    height: 60px;
+}
 /* .budicon-upload:before {
     content: "\e15d";
 }
@@ -291,7 +320,7 @@ border-radius: 0px;
 
 .form-control {
     /* display: block; */
-    width: 100%;
+    /* width: 100%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -311,4 +340,4 @@ border-radius: 0px;
 
 .datepicker {
     background-color: #fff !important;
-} */
+} */ 
