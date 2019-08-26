@@ -1,7 +1,7 @@
 let categories=[
         {
           "_id": "5d5e74800c7fb5f9d347005f",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "http://placekitten.com/g/30/30",
           "workerNumb": 18,
           "name": "Automobiles",
           "about": "Dolore irure laborum duis consequat do nisi magna sint nostrud incididunt culpa aliquip eiusmod cupidatat.\r\n",
@@ -56,7 +56,7 @@ let categories=[
           // "picture": require("../../public/assets/img/find_user.png"),
           "workerNumb": 4,
           "name": "Electroménager",
-          "about": "Cupidatat ex ea ad cupidatat nisi sunt magna incididunt velit duis qui enim. Deserunt anim ad proident eu et pariatur ut eiusmod officia non incididunt. Non dolore ad cillum anim esse.\r\n",
+          "about": "Deserunt anim ad proident eu et pariatur ut eiusmod officia non incididunt. Non dolore ad cillum anim esse.\r\n",
           "registered": "2016-06-09T12:34:51 -01:00",
           "isActive": false,
           "sous-categorie": [
@@ -139,7 +139,7 @@ let categories=[
           // "picture": require("../../public/assets/img/find_user.png"),
           "workerNumb": 3,
           "name": "Moto",
-          "about": "Pariatur id ut non veniam exercitation duis commodo. Amet commodo consequat proident nisi. Minim enim veniam veniam cillum mollit dolore sit non velit elit eiusmod duis nisi. Ex velit duis culpa cupidatat nulla est mollit sint labore nisi. Pariatur aliquip ea fugiat non et esse deserunt eiusmod.\r\n",
+          "about": "Ex velit duis culpa cupidatat nulla est mollit sint labore nisi. Pariatur aliquip ea fugiat non et esse deserunt eiusmod.\r\n",
           "registered": "2015-12-22T03:43:41 -01:00",
           "isActive": false,
           "sous-categorie": [

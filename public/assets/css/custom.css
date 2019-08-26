@@ -284,7 +284,7 @@ border-radius: 0px;
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 2px 5px 2px #484848;
-    max-height: 300px;
+    max-height: 500px;
     min-height: 300px;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -295,6 +295,11 @@ border-radius: 0px;
     }
 }
 
+.add-card-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .search-category{
     border: 2px solid black;
     border-radius: 5px;

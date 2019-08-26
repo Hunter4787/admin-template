@@ -115,7 +115,7 @@ class Profile extends Component {
 							/>
 						</div>
 						<div className="col-lg-6">
-							<input className="form-control" disabled defaultValue="Moez Hilmi" />
+							<input className="form-control" defaultValue="Moez Hilmi" />
 						</div>
 					</div>
 					<div className="form-group">
