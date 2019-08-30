@@ -1,134 +1,134 @@
 let categories=[
         {
           "_id": "5d5e74800c7fb5f9d347005f",
-          "picture": "http://placekitten.com/g/30/30",
+          "picture": "assets/img/mechanic.jpg",
           "workerNumb": 18,
-          "name": "Automobiles",
+          "title": "Automobiles",
           "about": "Dolore irure laborum duis consequat do nisi magna sint nostrud incididunt culpa aliquip eiusmod cupidatat.\r\n",
           "registered": "2019-04-01T07:07:13 -01:00",
           "isActive": false,
           "sous-categorie": [
             {
               "id": 0,
-              "name": "Changement de pneu",
+              "title": "Changement de pneu",
               "workers":3
             },
             {
               "id": 1,
-              "name": "Mécanique générale",
+              "title": "Mécanique générale",
               "workers":7
             },
             {
               "id": 2,
-              "name": "Panne électrique voiture",
+              "title": "Panne électrique voiture",
               "workers":4
             },
             {
               "id": 3,
-              "name": "Panne mécanique voiture",
+              "title": "Panne mécanique voiture",
               "workers":8
             }
           ]
         },
         {
           "_id": "5d5e748186ee75d9b1986e34",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/electrician.jpg",
           "workerNumb": 4,
-          "name": "Electricité",
+          "title": "Electricité",
           "about": "Commodo esse cupidatat anim tempor velit reprehenderit deserunt esse sint adipisicing quis quis est duis.\r\n",
           "registered": "2014-02-03T11:45:09 -01:00",
           "isActive": false,
           "sous-categorie": [
             {
               "id": 0,
-              "name": "Cablages électrique maison",
+              "title": "Cablages électrique maison",
               "workers":1
             },
             {
               "id": 1,
-              "name": "Installation électricité batiments",
+              "title": "Installation électricité batiments",
               "workers":1
             }
           ]
         },
         {
           "_id": "5d5e74814d72514c79aa0cb1",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/electro.jpg",
           "workerNumb": 4,
-          "name": "Electroménager",
+          "title": "Electroménager",
           "about": "Deserunt anim ad proident eu et pariatur ut eiusmod officia non incididunt. Non dolore ad cillum anim esse.\r\n",
           "registered": "2016-06-09T12:34:51 -01:00",
           "isActive": false,
           "sous-categorie": [
             {
               "id": 0,
-              "name": "Climatisation",
+              "title": "Climatisation",
               "workers":5
             },
             {
               "id": 1,
-              "name": "Fours et cuisinières",
+              "title": "Fours et cuisinières",
               "workers":0
             },
             {
               "id": 2,
-              "name": "Machina a laver",
+              "title": "Machina a laver",
               "workers":2
             },
             {
               "id": 3,
-              "name": "Petite électroménagers",
+              "title": "Petite électroménagers",
               "workers":0
             }
           ]
         },
         {
           "_id": "5d5e7481ff444b22f6a391f2",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/forgeron.jpg",
           "workerNumb": 8,
-          "name": "Forgeron",
+          "title": "Forgeron",
           "about": "Laboris qui labore id culpa exercitation dolor eu enim nisi aute ea dolore.\r\n",
           "registered": "2015-08-18T07:02:47 -01:00",
           "isActive": false,
           "sous-categorie": [
             {
               "id": 0,
-              "name": "Forgeron générale",
+              "title": "Forgeron générale",
               "workers":8
             },
             {
               "id": 1,
-              "name": "Soudage",
+              "title": "Soudage",
               "workers":6
             }
           ]
         },
         {
           "_id": "5d5e74817d56213997891ac0",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/menuisier.jpg",
           "workerNumb": 13,
-          "name": "Menuisier",
+          "title": "Menuisier",
           "about": "Velit commodo proident commodo culpa ex aliqua aliqua.\r\n",
           "registered": "2014-05-16T08:18:31 -01:00",
           "isActive": false,
           "sous-categorie": [
             {
               "id": 0,
-              "name": "Menuisier alumiinium",
+              "title": "Menuisier alumiinium",
               "workers":3
             },
             {
               "id": 1,
-              "name": "Menuisier charpentier",
+              "title": "Menuisier charpentier",
               "workers":8
             }
           ]
         },
         {
           "_id": "5d5e7481f482f3b2218a9542",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/montre.jpg",
           "workerNumb": 4,
-          "name": "Montre",
+          "title": "Montre",
           "about": "Ex sunt et amet qui esse id elit dolore occaecat non.\r\n",
           "registered": "2017-03-15T02:02:13 -01:00",
           "isActive": false,
@@ -136,40 +136,40 @@ let categories=[
         },
         {
           "_id": "5d5e74819d32abee03ed15ba",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/moto.jpg",
           "workerNumb": 3,
-          "name": "Moto",
+          "title": "Moto",
           "about": "Ex velit duis culpa cupidatat nulla est mollit sint labore nisi. Pariatur aliquip ea fugiat non et esse deserunt eiusmod.\r\n",
           "registered": "2015-12-22T03:43:41 -01:00",
           "isActive": false,
           "sous-categorie": [
             {
               "id": 0,
-              "name": "Bicyclette",
+              "title": "Bicyclette",
               "workers":2
             },
             {
               "id": 1,
-              "name": "Moto cross",
+              "title": "Moto cross",
               "workers":2
             },
             {
               "id": 2,
-              "name": "Moto quad",
+              "title": "Moto quad",
               "workers":1
             },
             {
               "id": 3,
-              "name": "Moto vitesse",
+              "title": "Moto vitesse",
               "workers":2
             }
           ]
         },
         {
           "_id": "5d5e7481bceadef802d50b22",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/peinture.jpg",
           "workerNumb": 3,
-          "name": "Peintire",
+          "title": "Peinture",
           "about": " Aliquip fugiat ipsum ea consequat sit esse anim culpa sit. Incididunt et incididunt ipsum officia non est qui sint.\r\n",
           "registered": "2016-08-23T03:21:02 -01:00",
           "isActive": false,
@@ -177,62 +177,62 @@ let categories=[
         },
         {
           "_id": "5d5e74813b46cdd0e376aece",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/plombier.jpg",
           "workerNumb": 8,
-          "name": "Plomberie",
+          "title": "Plomberie",
           "about": "Culpa sit deserunt mollit mollit cupidatat minim reprehenderit deserunt eu.\r\n",
           "registered": "2014-03-01T03:43:00 -01:00",
           "isActive": false,
           "sous-categorie": [
             {
               "id": 0,
-              "name": "Chodière",
+              "title": "Chodière",
               "workers":1
             },
             {
               "id": 1,
-              "name": "Chauffage",
+              "title": "Chauffage",
               "workers":3
             },
             {
               "id": 2,
-              "name": "Fuites d'eau ou gaz",
+              "title": "Fuites d'eau ou gaz",
               "workers":3
             },
             {
               "id": 3,
-              "name": "Problèmes de sanitaires",
+              "title": "Problèmes de sanitaires",
               "workers":2
             }
           ]
         },
         {
           "_id": "5d5e748114ae9d0172dc61b8",
-          // "picture": require("../../public/assets/img/find_user.png"),
+          "picture": "assets/img/tv-ordinateur-et-téléphone.jpg",
           "workerNumb": 5,
-          "name": "TV, Ordinateurs et Téléphones",
+          "title": "TV, Ordinateurs et Téléphones",
           "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
           "registered": "2014-04-14T04:00:35 -01:00",
           "isActive": false,
           "sous-categorie": [
             {
               "id": 0,
-              "name": "Tablette",
+              "title": "Tablette",
               "workers":1
             },
             {
               "id": 1,
-              "name": "Téléphone portable",
+              "title": "Téléphone portable",
               "workers":1
             },
             {
               "id": 2,
-              "name": "TV",
+              "title": "TV",
               "workers":2
             },
             {
               "id": 3,
-              "name": "Ordinateur",
+              "title": "Ordinateur",
               "workers":2
             }
           ]
@@ -254,7 +254,7 @@ let categories=[
             )
             case 'REMOVE_CATEGORY':
             return (
-                state.filter(el=>el._id!==action._id)
+              state.filter(el=>el._id!==action._id)
             )
             case 'UPDATE_CATEGORy':
             return(

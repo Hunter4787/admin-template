@@ -1,62 +1,66 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
-class AddCategory extends Component {
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+class EditCategory extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            modalIsOpen: false
+            title:"",
+            picture:""
          }
     }
-    openModal=()=> {
-                this.setState({modalIsOpen: true});
-              }
-             
-    afterOpenModal=()=> {
-                // references are now sync'd and can be accessed.
-                this.subtitle.style.color = '#f00';
-              }
-             
-    closeModal=()=> {
-                this.setState({modalIsOpen: false});
-              }
-    render() {
-        const customStyles = {
-                        content : {
-                          top                   : '50%',
-                          left                  : '50%',
-                          right                 : 'auto',
-                          bottom                : 'auto',
-                          marginRight           : '-50%',
-                          transform             : 'translate(-50%, -50%)'
-                        }
-                      };
-             
-        return ( 
-            <div className="col-lg-4 col-md-6 col-sm-12 add-mrgn">
-                <img onMouseOver="" onClick={this.openModal} src={require('./plus.jpg')} alt="ajouter un element" />
-//                 <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Add Modal"
-        >
- 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <div>Add new movie</div>
-          <form>
-            <input type="text"/>
-            <input type="file"/>
-            <input type="text"/>
-            <button>tab navigation</button>
-            
-          </form>
-        </Modal>
+    handleChange=(e)=>
+    {
+       this.setState({
+           [e.target.name]:e.target.value
+       })
+    }
+    componentDidMount=()=>
 
-            </div>
-         );
+    {
+    this.setState({
+            ...this.props.categories.filter(el=>el._id===this.props._id)[0]
+        })
+    }
+    render() { 
+        return ( 
+        <div className='add-category-container'>
+            <h1>Edit Contact</h1>
+            {this.state.title}
+            <div>
+            <h5>Title :</h5>
+             <input  type='text' name='title' value={this.props.categories.title} onChange={this.handleChange}/>
+             </div>
+             <div>
+             <h5>picture :</h5>
+             <input  type='file' name='picture' value={this.props.categories.picture} onChange={this.handleChange}/>
+             </div>
+             <Link to='/categories'>
+             <button onClick={()=>this.props.editCategoryReducer({...this.state})}>Edit Category </button>
+             </Link>
+        </div>
+        );
+    }
+}
+
+const mapStateToProps=(state)=>
+{
+    return {
+        categories:state.categoryReducer
+    }
+} 
+
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+        editCategoryReducer:editcategory=>
+        {
+            dispatch({
+                type:'EDIT_CATEGORY',
+                editcategory
+            })
+        }
     }
 }
  
-export default AddCategory;
+export default connect(mapStateToProps,mapDispatchToProps)(EditCategory);

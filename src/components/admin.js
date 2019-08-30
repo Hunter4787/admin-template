@@ -9,10 +9,12 @@ class Admin extends Component {
         this.state = {  }
     }
     render() { 
-        return ( <div>
+        return ( <div className="admin-container">
         <NavBar />
-        <SideBar />
+        <div className="">
+        <SideBar/>
          <Routes />
+         </div>
         </div> );
     }
 }

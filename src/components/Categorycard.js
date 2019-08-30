@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+  CardTitle, Button } from 'reactstrap';
   var FontAwesome = require('react-fontawesome');
 class CategoryCard extends Component {
     constructor(props) {
@@ -11,33 +12,36 @@ class CategoryCard extends Component {
     render() { 
         const {item, deleteCategoryReducer} = this.props
         return ( <div className="col-lg-3 col-md-6 col-sm-12 card-container">
-      <Card>
-        <button onClick={()=>deleteCategoryReducer(item._id)} className="">
+        <button onClick={()=>deleteCategoryReducer(item._id)}>
           <FontAwesome
         className='super-crazy-colors'
         name='times-circle'
         size='2x'
         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
       /></button>
-        {/* <CardImg top width="100%" src={item.picture} alt="Card image cap" /> */}
+      <Card>
         <CardBody>
-          <CardTitle><h4>{item.name}</h4></CardTitle>
-          <CardSubtitle>Description</CardSubtitle>
-          <CardText>{item.about}</CardText>
+          <CardTitle><h4>{item.title}</h4></CardTitle>
+          <CardImg top width="100%" src={item.picture} alt="Card image cap" />
           <Button>more details</Button>
           <div>
-          <button><FontAwesome
+         <Link to="/editCategory">
+           <button><FontAwesome
         className='super-crazy-colors'
         name='edit'
         size='2x'
         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-      /></button>
-          <button><FontAwesome
+      />
+      </button>
+      </Link>
+         <Link to="/card-infos"> <button><FontAwesome
         className='super-crazy-colors'
         name='info-circle'
         size='2x'
         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-      /></button>
+      />
+      </button>
+      </Link>
           </div>
         </CardBody>
       </Card>
@@ -50,8 +54,8 @@ const mapDispatchToProps=(dispatch)=>
         deleteCategoryReducer:_id=>
         {
             dispatch({
-                type:'REMOVE_CONTACT',
-                _id
+                type:'REMOVE_CATEGORY',
+                _id //es6
             })
         }
     }
