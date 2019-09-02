@@ -4,8 +4,8 @@ import Dashboard from './dashboard';
 import Profile from './profile';
 import Notification from './notification';
 import CategoryList from './CategoryList';
-import editCategory from './editCategory';
-import InfosAlert from './InfosAlert';
+import EditCategory  from './editCategory';
+import InfosCategory from './InfosCategory';
 // import AddCategory from './addCategory'
 class Routes extends Component {
     constructor(props) {
@@ -18,8 +18,8 @@ class Routes extends Component {
             <Route exact path='/profile' component={Profile}/>
             <Route exact path='/notification' component={Notification}/>
             <Route exact path='/categories' component={CategoryList}/>
-            <Route exact path='/editCategory' component={editCategory}/>
-            <Route exact path='/card-infos' component={InfosAlert}/>
+            <Route exact path='/editCategory/:_id' render={(props)=><EditCategory _id={props.match.params._id}/>}/>
+            <Route exact path='/card-infos/:_id' render={(props)=><InfosCategory _id={props.match.params._id}/>}/>
         </div> );
     }
 }

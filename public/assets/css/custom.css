@@ -310,6 +310,25 @@ border-radius: 0px;
     margin-left: 530px;
     justify-content: space-around;
 }
+
+.InfosCategory-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 120px;
+    width: 80%;
+    margin-left: 20%;
+    border: 1px solid black;
+}
+
+.InfosCategory{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    width: 40%;
+    height: 300px;
+}
 .add-card-icon{
     display: flex;
     justify-content: center;

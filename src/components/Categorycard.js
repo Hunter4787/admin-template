@@ -25,7 +25,7 @@ class CategoryCard extends Component {
           <CardImg top width="100%" src={item.picture} alt="Card image cap" />
           <Button>more details</Button>
           <div>
-         <Link to="/editCategory">
+         <Link to={`/editCategory/${item._id}`}>
            <button><FontAwesome
         className='super-crazy-colors'
         name='edit'
@@ -34,7 +34,7 @@ class CategoryCard extends Component {
       />
       </button>
       </Link>
-         <Link to="/card-infos"> <button><FontAwesome
+         <Link to={`/card-infos/${item._id}`}> <button><FontAwesome
         className='super-crazy-colors'
         name='info-circle'
         size='2x'
@@ -60,4 +60,5 @@ const mapDispatchToProps=(dispatch)=>
         }
     }
   }
+  
 export default connect(null,mapDispatchToProps)(CategoryCard);

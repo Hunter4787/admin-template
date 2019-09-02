@@ -256,7 +256,7 @@ let categories=[
             return (
               state.filter(el=>el._id!==action._id)
             )
-            case 'UPDATE_CATEGORy':
+            case 'UPDATE_CATEGORY':
             return(
                 state=action.category
             )
