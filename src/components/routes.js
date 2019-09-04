@@ -6,6 +6,7 @@ import Notification from './notification';
 import CategoryList from './CategoryList';
 import EditCategory  from './editCategory';
 import InfosCategory from './InfosCategory';
+import SousCategoryList from './sousCategoryList'
 // import AddCategory from './addCategory'
 class Routes extends Component {
     constructor(props) {
@@ -19,7 +20,8 @@ class Routes extends Component {
             <Route exact path='/notification' component={Notification}/>
             <Route exact path='/categories' component={CategoryList}/>
             <Route exact path='/editCategory/:_id' render={(props)=><EditCategory _id={props.match.params._id}/>}/>
-            <Route exact path='/card-infos/:_id' render={(props)=><InfosCategory _id={props.match.params._id}/>}/>
+            <Route exact path='/cardInfos/:_id' render={(props)=><InfosCategory _id={props.match.params._id}/>}/>
+            <Route exact path='/sousCategory/:_id' render={(props)=><SousCategoryList _id={props.match.params._id}/>}/>
         </div> );
     }
 }

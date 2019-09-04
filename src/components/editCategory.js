@@ -18,7 +18,7 @@ class EditCategory extends Component {
     handleChangeImg=(e)=>{
         this.setState({picture: URL.createObjectURL(e.target.files[0])})
     }
-    componentDidMount=()=>
+    componentWillMount=()=>
 
     {
     this.setState({
@@ -29,7 +29,7 @@ class EditCategory extends Component {
         this.props.editCategoryReducer(this.state)
     }
     render() { 
-        console.log(this.state);
+        console.log(this.state)
         return ( 
         <div className='add-category-container'>
             <h1>Edit Contact</h1>

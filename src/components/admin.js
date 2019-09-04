@@ -11,7 +11,7 @@ class Admin extends Component {
     render() { 
         return ( <div className="admin-container">
         <NavBar />
-        <div className="">
+        <div className="admin">
         <SideBar/>
          <Routes />
          </div>

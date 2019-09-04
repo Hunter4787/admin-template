@@ -1,32 +1,26 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Modal from 'react-modal';
 import CategoryCard from './Categorycard';
 var FontAwesome = require('react-fontawesome');
-class CategoryList extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			title:"",
-			modalIsOpen: false
-		};
-	}
-	//handlechange search inputs 
-	handlechange = (event) => {
-		this.setState({ title:event.target.value})
+class SousCategoryList extends Component {
+    state = {
+        searchTitle:"",
+        modalIsOpen: false
+     }
+    //handlechange search inputs 
+	handlechangeSearchTitle = (event) => {
+		this.setState({ searchTitle:event.target.value})
 
 	}
-    //new category modal inputs
-	handleChangeNewcategory=(e)=>
+    componentWillMount=()=>
+
     {
-       this.setState({
-           [e.target.name]:e.target.value
-       })
+    this.setState({
+        ...this.props.categories.filter(el=>el._id===this.props._id)[0]
+      });
     }
-    handleChangeImg=(e)=>{
-        this.setState({picture: URL.createObjectURL(e.target.files[0])})
-    }
-	//modal methods
+    	//modal methods
 	openModal=()=> {
 		this.setState({modalIsOpen: true});
 	  }
@@ -43,23 +37,19 @@ toggle=() =>{
 	}
 closeModal=()=> {
 		this.setState({modalIsOpen: false});
-	  }
-	  //ad new category method
-	  add=()=>{
-		  this.props.addCategoryReducer(
-			  {
-				  _id:Math.random * 100+"",
-				  picture:this.state.picture,
-				  workerNumb:this.state.workerNumb,
-				  title:this.state.newtitle,
-				  about: this.state.about,
-				  registered:this.state.registered,
-				  isActive:this.state.isActive,
-				  souscategory:this.state.souscategory
-			})
-	  }
-	render() {
-		const customStyles = {
+      }
+          //new category modal inputs
+	handleChangeNewcategory=(e)=>
+    {
+       this.setState({
+           [e.target.name]:e.target.value
+       })
+    }
+    handleChangeImg=(e)=>{
+        this.setState({picture: URL.createObjectURL(e.target.files[0])})
+    }
+    render() { 
+        const customStyles = {
 			content : {
 			  top                   : '50%',
 			  left                  : '50%',
@@ -69,23 +59,25 @@ closeModal=()=> {
 			  transform             : 'translate(-50%, -50%)'
 			}
 		  };
-		return (
-			<div className="container category-list-container">
-				<h1 className="col-lg-12 col-md-12 col-sm-12 category-title">Hello categories</h1>
+        console.log(this.state);
+        return ( 
+        <div className="container category-list-container">
+            <h1 className="col-lg-12 col-md-12 col-sm-12 category-title">{this.state.title}: sous-categories</h1>
 				<input
 					type="text"
-					onChange={(event)=>this.handlechange(event)}
+					onChange={(event)=>this.handlechangeSearchTitle(event)}
 					name="categorySearch"
 					className="col-lg-9 col-md-12 col-sm-12 align-self-center search-category"
 					placeholder="Lancer votre recherche"
 				/>
-				{	
-					this.props.categories.filter(el => {
-						return (el.title.toLowerCase().indexOf(this.state.title.toLowerCase()) > -1)
-					  }).map((el, index) => (
+              {
+               this.state.souscategory.filter(el => {
+                return (el.title.toLowerCase().indexOf(this.state.searchTitle.toLowerCase()) > -1)
+              }).map((el, index) => (
 					<CategoryCard key={index} item={el} />
-				))}
-				<div className="card-container col-lg-3 col-md-6 col-sm-12 add-card-icon">
+                ))
+                } 
+                <div className="card-container col-lg-3 col-md-6 col-sm-12 add-card-icon">
 				<button onClick={this.openModal}>
 					<FontAwesome
 						className="super-crazy-colors"
@@ -124,10 +116,12 @@ closeModal=()=> {
         </Modal>
 
 				</div>
-			</div>
-		);
-	}
+
+        </div>
+         );
+    }
 }
+ 
 const mapStateToProps = state => {
 	return {
 		categories: state.categoryReducer,
@@ -145,5 +139,4 @@ const mapDispatchToProps=(dispatch)=>
         }
     }
 }
-
-export default connect(mapStateToProps,mapDispatchToProps)(CategoryList);
+export default connect(mapStateToProps,mapDispatchToProps)(SousCategoryList);

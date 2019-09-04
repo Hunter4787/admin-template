@@ -80,15 +80,15 @@ var users=[
   {
     switch(action.type)
     {
-        case 'ADD_user' :
+        case 'ADD_USER' :
         return (
             state.concat(action.newuser)
         )
-        case 'BLOCK_user':
+        case 'BLOCK_USER':
         return (
             state.map(el=>el._id===action.blockuser._id? el=action.blockuser:el)
         )
-        case 'UNBLOCK_user':
+        case 'UNBLOCK_USER':
         return (
           state.map(el=>el._id===action.blockuser._id? el=action.blockuser:el)
         )

@@ -19,7 +19,7 @@ class NavBar extends Component {
                 </div>
                 <div className="navbar-collapse collapse">
                     <ul className="nav navbar-nav navbar-right">
-                        <li ><img id='profile-img' src="assets/img/find_user.png" className="img-responsive" alt="user img"/><span>MyAdmin</span></li>
+                        <li ><img id='profile-img' src="/assets/img/find_user.png" className="img-responsive" alt="user img"/><span>MyAdmin</span></li>
                         <li>{/*<a href="#"><!--<i className="bg-primary fas fa-envelope-open-text"></i></a>*/}hi</li>
                         <li>{/*<a href="#">Report Bug</a>*/}</li>
                     </ul>

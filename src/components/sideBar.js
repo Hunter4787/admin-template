@@ -12,7 +12,7 @@ class SideBar extends Component {
             <div className="sidebar-collapse">
                 <ul className="nav" id="main-menu">
                     <li className="text-center user-image-back">
-                        <img src="assets/img/find_user.png" className="img-responsive" alt="user logo"/>
+                        <img src="/assets/img/find_user.png" className="img-responsive" alt="user logo"/>
                      
                     </li>
 

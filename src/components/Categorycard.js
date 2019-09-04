@@ -23,7 +23,9 @@ class CategoryCard extends Component {
         <CardBody>
           <CardTitle><h4>{item.title}</h4></CardTitle>
           <CardImg top width="100%" src={item.picture} alt="Card image cap" />
-          <Button>more details</Button>
+          <Link to={`/sousCategory/${item._id}`}>
+            <Button>plus de details</Button>
+            </Link>
           <div>
          <Link to={`/editCategory/${item._id}`}>
            <button><FontAwesome
@@ -34,7 +36,7 @@ class CategoryCard extends Component {
       />
       </button>
       </Link>
-         <Link to={`/card-infos/${item._id}`}> <button><FontAwesome
+         <Link to={`/cardInfos/${item._id}`}> <button><FontAwesome
         className='super-crazy-colors'
         name='info-circle'
         size='2x'

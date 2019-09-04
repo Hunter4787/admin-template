@@ -12,7 +12,9 @@ class InfosCategory extends Component {
             ...this.props.categories.filter(el=>el._id===this.props._id)[0]
         })
     }
+
     render() { 
+        console.log(this.state);
         return (  
         <div className="InfosCategory-container">
             <div className="InfosCategory">
@@ -22,7 +24,7 @@ class InfosCategory extends Component {
               <p>{this.state.about} </p>
             </div>
             <div>
-         <img src={`require(${this.state.picture})`} alt="category image" />
+         <img src={this.state.picture} alt="category" />
             </div>
         </div> 
         );
