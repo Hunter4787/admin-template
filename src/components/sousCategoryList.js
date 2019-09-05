@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Modal from 'react-modal';
-import CategoryCard from './Categorycard';
+import CategoryCard from './Categorycard'
 var FontAwesome = require('react-fontawesome');
 class SousCategoryList extends Component {
     state = {
@@ -74,7 +74,7 @@ closeModal=()=> {
                this.state.souscategory.filter(el => {
                 return (el.title.toLowerCase().indexOf(this.state.searchTitle.toLowerCase()) > -1)
               }).map((el, index) => (
-					<CategoryCard key={index} item={el} />
+					<CategoryCard key={index} item={el}/>
                 ))
                 } 
                 <div className="card-container col-lg-3 col-md-6 col-sm-12 add-card-icon">

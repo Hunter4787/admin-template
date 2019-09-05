@@ -7,6 +7,7 @@ import CategoryList from './CategoryList';
 import EditCategory  from './editCategory';
 import InfosCategory from './InfosCategory';
 import SousCategoryList from './sousCategoryList'
+import EditSousCategory from './sousCategoryCard'
 // import AddCategory from './addCategory'
 class Routes extends Component {
     constructor(props) {

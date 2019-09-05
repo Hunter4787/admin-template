@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-class EditCategory extends Component {
+class EditSousCategory extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            All:{}
+            title:"",
+            picture:""
          }
     }
     handleChangeTitle=(e)=>
@@ -19,15 +20,13 @@ class EditCategory extends Component {
     }
     componentWillMount=()=>
 
-    {(this.props.categories.filter(el=>(el._id===this.props._id))[0])?
+    {
     this.setState({
-           ...this.props.categories.filter(el=>(el._id===this.props._id))[0]
-        }):this.setState({
-            ...(this.props.categories.map(el=>(el.souscategory.filter(el=>el._id===this.props._id))).filter(el=>el.length!==0)[0])[0]
-         })
+            ...this.props.souscategories.filter(el=>el._id===this.props._id)[0]
+        })
     }
     edit=()=>{
-        this.props.editCategoryReducer(this.state)
+        this.props.editSousCategoryReducer(this.state)
     }
     render() { 
         console.log(this.state)
@@ -35,12 +34,8 @@ class EditCategory extends Component {
         <div className='add-category-container'>
             <h1>Edit Contact</h1>
             <div>
-                <h5>Title :</h5>
-                <input
-                type='text'
-                name='title'
-                value={this.state.title}
-                onChange={this.handleChangeTitle}/>
+            <h5>Title :</h5>
+             <input  type='text' name='title' value={this.state.title} onChange={this.handleChangeTitle}/>
              </div>
              <div>
              <h5>picture :</h5>
@@ -57,20 +52,13 @@ class EditCategory extends Component {
 const mapStateToProps=(state)=>
 {
     return {
-        categories:state.categoryReducer
+        souscategories:state.categoryReducer
     }
 } 
 
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        editCategoryReducer:editcategory=>
-        {
-            dispatch({
-                type:'EDIT_CATEGORY',
-                editcategory
-            })
-        },
         editSousCategoryReducer:editsouscategory=>
         {
             dispatch({
@@ -81,4 +69,4 @@ const mapDispatchToProps=(dispatch)=>
     }
 }
  
-export default connect(mapStateToProps,mapDispatchToProps)(EditCategory);
+export default connect(mapStateToProps,mapDispatchToProps)(EditSousCategory);

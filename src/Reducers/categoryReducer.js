@@ -45,6 +45,7 @@ let categories=[
           "title": "Electricité",
           "about": "Commodo esse cupidatat anim tempor velit reprehenderit deserunt esse sint adipisicing quis quis est duis.\r\n",
           "registered": "2014-02-03T11:45:09 -01:00",
+          "isActive": false,
           "souscategory": [
             {
               "_id": "5d6f8c7e20e3be237ceff375",
@@ -69,6 +70,7 @@ let categories=[
           "title": "Electroménager",
           "about": "Deserunt anim ad proident eu et pariatur ut eiusmod officia non incididunt. Non dolore ad cillum anim esse.\r\n",
           "registered": "2016-06-09T12:34:51 -01:00",
+          "isActive": false,
           "souscategory": [
             {
               "_id": "5d6f8c7e97becab3826f6902",
@@ -107,6 +109,7 @@ let categories=[
           "title": "Forgeron",
           "about": "Laboris qui labore id culpa exercitation dolor eu enim nisi aute ea dolore.\r\n",
           "registered": "2015-08-18T07:02:47 -01:00",
+          "isActive": false,
           "souscategory": [
             {
               "_id": "5d6f8c7e962f24c7b63f4771",
@@ -131,6 +134,7 @@ let categories=[
           "title": "Menuisier",
           "about": "Velit commodo proident commodo culpa ex aliqua aliqua.\r\n",
           "registered": "2014-05-16T08:18:31 -01:00",
+          "isActive": false,
           "souscategory": [
             {
               "_id": "5d6f8c7e1c95c121e13f863b",
@@ -155,6 +159,7 @@ let categories=[
           "title": "Montre",
           "about": "Ex sunt et amet qui esse id elit dolore occaecat non.\r\n",
           "registered": "2017-03-15T02:02:13 -01:00",
+          "isActive": false,
           "souscategory": []
         },
         {
@@ -164,6 +169,7 @@ let categories=[
           "title": "Moto",
           "about": "Ex velit duis culpa cupidatat nulla est mollit sint labore nisi. Pariatur aliquip ea fugiat non et esse deserunt eiusmod.\r\n",
           "registered": "2015-12-22T03:43:41 -01:00",
+          "isActive": false,
           "souscategory": [
             {
               "_id": "5d6f8c7e706f89982fcaed0b",
@@ -202,6 +208,7 @@ let categories=[
           "title": "Peinture",
           "about": " Aliquip fugiat ipsum ea consequat sit esse anim culpa sit. Incididunt et incididunt ipsum officia non est qui sint.\r\n",
           "registered": "2016-08-23T03:21:02 -01:00",
+          "isActive": false,
           "souscategory": []
         },
         {
@@ -211,6 +218,7 @@ let categories=[
           "title": "Plomberie",
           "about": "Culpa sit deserunt mollit mollit cupidatat minim reprehenderit deserunt eu.\r\n",
           "registered": "2014-03-01T03:43:00 -01:00",
+          "isActive": false,
           "souscategory": [
             {
               "_id": "5d6f8c7e7c6f47ba1fdc60bc",
@@ -249,6 +257,7 @@ let categories=[
           "title": "TV, Ordinateurs et Téléphones",
           "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
           "registered": "2014-04-14T04:00:35 -01:00",
+          "isActive": false,
           "souscategory": [
             {
               "_id": "5d6f8c7e0fef64f861e78187",
@@ -290,14 +299,26 @@ let categories=[
             return (
                 state.concat(action.newcategory)
             )
+            case 'ADD_SOUSCATEGORY' :
+            return (
+                state.souscategory.concat(action.newcategory)
+            )
       
             case 'EDIT_CATEGORY':
             return (
-                state.map(el=>el.__===action.editcategory._id? el=action.editcategory:el)
+                state.map(el=>el._id===action.editcategory._id? el=action.editcategory:el)
+            )
+            case 'EDIT_SOUSCATEGORY':
+            return (
+                state.map(el=>el.souscategory._id===action.editsouscategory._id? el=action.editsouscategory:el)
             )
             case 'REMOVE_CATEGORY':
             return (
               state.filter(el=>el._id!==action._id)
+            )
+            case 'REMOVE_SOUSCATEGORY':
+            return (
+              state.filter(el=>el.souscategory._id!==action._id)
             )
             case 'UPDATE_CATEGORY':
             return(

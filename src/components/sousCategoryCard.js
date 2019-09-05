@@ -4,15 +4,15 @@ import {Link} from 'react-router-dom'
 import { Card, CardImg, CardBody,
   CardTitle, Button } from 'reactstrap';
   var FontAwesome = require('react-fontawesome');
-class CategoryCard extends Component {
+class SousCategoryCard extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     render() { 
-        const {item, deleteCategoryReducer} = this.props
+        const {item, deleteSousCategoryReducer} = this.props
         return ( <div className="col-lg-3 col-md-6 col-sm-12 card-container">
-        <button onClick={()=>deleteCategoryReducer(item._id)}>
+        <button onClick={()=>deleteSousCategoryReducer(item._id)}>
           <FontAwesome
         className='super-crazy-colors'
         name='times-circle'
@@ -27,7 +27,7 @@ class CategoryCard extends Component {
             <Button>plus de details</Button>
             </Link>
           <div>
-         <Link to={`/editCategory/${item._id}`}>
+         <Link to={`/editCategorycard/_id/${item._id}`}>
            <button><FontAwesome
         className='super-crazy-colors'
         name='edit'
@@ -36,7 +36,7 @@ class CategoryCard extends Component {
       />
       </button>
       </Link>
-         <Link to={`/cardInfos/${item._id}`}> <button><FontAwesome
+         <Link to={`/cardInfos/_id/${item._id}`}> <button><FontAwesome
         className='super-crazy-colors'
         name='info-circle'
         size='2x'
@@ -53,21 +53,21 @@ class CategoryCard extends Component {
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        deleteCategoryReducer:_id=>
+        deleteSousCategoryReducer:_id=>
         {
             dispatch({
-                type:'REMOVE_CATEGORY',
+                type:'REMOVE_SOUSCATEGORY',
                 _id //es6
             })
         },
-        editCategoryReducer:editcategory=>
+        editSousCategoryReducer:editsouscategory=>
         {
             dispatch({
-                type:'EDIT_CATEGORY',
-                editcategory
+                type:'EDIT_SOUSCATEGORY',
+                editsouscategory
             })
         }
     }
   }
   
-export default connect(null,mapDispatchToProps)(CategoryCard);
+export default connect(null,mapDispatchToProps)(SousCategoryCard);
