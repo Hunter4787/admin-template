@@ -310,7 +310,7 @@ let categories=[
             )
             case 'EDIT_SOUSCATEGORY':
             return (
-                state.map(el=>el.souscategory._id===action.editsouscategory._id? el=action.editsouscategory:el)
+                state.map(el=>el.souscategory.map(el=>el._id===action.editsouscategory._id? el=action.editsouscategory:el))
             )
             case 'REMOVE_CATEGORY':
             return (
@@ -318,7 +318,7 @@ let categories=[
             )
             case 'REMOVE_SOUSCATEGORY':
             return (
-              state.filter(el=>el.souscategory._id!==action._id)
+              state.map(el=>el.souscategory.filter(el=>el._id!==action._id))
             )
             case 'UPDATE_CATEGORY':
             return(

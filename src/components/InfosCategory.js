@@ -5,16 +5,18 @@ class InfosCategory extends Component {
         super(props);
         this.state = {  }
     }
-    componentDidMount=()=>
+    componentWillMount=()=>
 
-    {
+    {(this.props.categories.filter(el=>el._id===this.props._id)[0])?
     this.setState({
             ...this.props.categories.filter(el=>el._id===this.props._id)[0]
+        }): this.setState({
+            ...this.props.categories.map(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0]
         })
     }
 
     render() { 
-        console.log(this.state);
+        console.log(this.props.categories.map(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0]);
         return (  
         <div className="InfosCategory-container">
             <div className="InfosCategory">

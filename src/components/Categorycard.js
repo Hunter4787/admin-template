@@ -9,10 +9,16 @@ class CategoryCard extends Component {
         super(props);
         this.state = {  }
     }
+    remove=()=>{
+      (this.props.categories.filter(el=>el._id===this.props.item._id))?
+      this.props.deleteCategoryReducer(this.props.item._id):
+      this.props.deleteSousCategoryReducer(this.props.item._id)
+    }
     render() { 
-        const {item, deleteCategoryReducer} = this.props
+      console.log(this.props.item._id)
+        const {item, deleteCategoryReducer, editSousCategoryReducer, deleteSousCategoryReducer} = this.props
         return ( <div className="col-lg-3 col-md-6 col-sm-12 card-container">
-        <button onClick={()=>deleteCategoryReducer(item._id)}>
+        <button onClick={this.remove}>
           <FontAwesome
         className='super-crazy-colors'
         name='times-circle'
@@ -50,6 +56,11 @@ class CategoryCard extends Component {
         </div> );
     }
 }
+const mapStateToProps = state => {
+	return {
+		categories: state.categoryReducer,
+	};
+};
 const mapDispatchToProps=(dispatch)=>
 {
     return {
@@ -66,8 +77,22 @@ const mapDispatchToProps=(dispatch)=>
                 type:'EDIT_CATEGORY',
                 editcategory
             })
+        },
+        editSousCategoryReducer:editsouscategory=>
+        {
+            dispatch({
+                type:'EDIT_SOUSCATEGORY',
+                editsouscategory
+            })
+        },
+        deleteSousCategoryReducer:_id=>
+        {
+            dispatch({
+                type:'REMOVE_SOUSCATEGORY',
+                _id
+            })
         }
     }
   }
   
-export default connect(null,mapDispatchToProps)(CategoryCard);
+export default connect(mapStateToProps,mapDispatchToProps)(CategoryCard);

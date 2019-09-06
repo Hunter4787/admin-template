@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 class EditCategory extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            All:{}
-         }
+        this.state = { 
+            categoryID:this.props.categories.filter(el=>el.souscategory.filter(el=>el._id.indexOf(this.props._id)> -1)[0])[0]._id
+        }
     }
     handleChangeTitle=(e)=>
     {
@@ -23,14 +23,18 @@ class EditCategory extends Component {
     this.setState({
            ...this.props.categories.filter(el=>(el._id===this.props._id))[0]
         }):this.setState({
-            ...(this.props.categories.map(el=>(el.souscategory.filter(el=>el._id===this.props._id))).filter(el=>el.length!==0)[0])[0]
+            ...(this.props.categories.map((el,i)=>
+            (el.souscategory.filter(el=>el._id===this.props._id)))
+            .filter(el=>el.length!==0)[0])[0]
          })
     }
     edit=()=>{
-        this.props.editCategoryReducer(this.state)
+        (this.props.categories.map(el=>(el._id===this.props._id))[0])?
+        this.props.editCategoryReducer(this.state):this.props.editSousCategoryReducer(this.state)
     }
     render() { 
         console.log(this.state)
+        console.log(this.props.categories.filter(el=>el.souscategory.filter(el=>el._id.indexOf(this.props._id)> -1)[0])[0]._id)
         return ( 
         <div className='add-category-container'>
             <h1>Edit Contact</h1>
@@ -46,7 +50,7 @@ class EditCategory extends Component {
              <h5>picture :</h5>
              <input  type='file' name='picture' onChange={this.handleChangeImg}/>
              </div>
-             <Link to='/categories'>
+             <Link to={(this.props.categories.map(el=>(el._id===this.props._id))[0])?'/categories':`/sousCategory/${this.state.categoryID}`}>
              <button onClick={()=>{this.edit()}}>Edit Category </button>
              </Link>
         </div>
