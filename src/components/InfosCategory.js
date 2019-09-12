@@ -3,20 +3,21 @@ import {connect} from 'react-redux'
 class InfosCategory extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { }
     }
     componentWillMount=()=>
 
-    {(this.props.categories.filter(el=>el._id===this.props._id)[0])?
+    {if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===0)
+        this.setState({
+            ...this.props.categories.filter(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0].souscategory.filter(el=>el._id===this.props._id)[0]
+        }); if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===1)
     this.setState({
             ...this.props.categories.filter(el=>el._id===this.props._id)[0]
-        }): this.setState({
-            ...this.props.categories.map(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0]
         })
     }
 
     render() { 
-        console.log(this.props.categories.map(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0]);
+
         return (  
         <div className="InfosCategory-container">
             <div className="InfosCategory">

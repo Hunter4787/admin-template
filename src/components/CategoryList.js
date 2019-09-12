@@ -60,7 +60,7 @@ closeModal=()=> {
 	  }
 	render() {
 		console.log(this.props._id)
-		console.log(this.props.categories.filter(el=>(el._id===this.props._id))[0])
+		
 		const customStyles = {
 			content : {
 			  top                   : '50%',
@@ -71,6 +71,7 @@ closeModal=()=> {
 			  transform             : 'translate(-50%, -50%)'
 			}
 		  };
+		 const {categories, _id} = this.props
 		return (
 			<div className="container category-list-container">
 				<h1 className="col-lg-12 col-md-12 col-sm-12 category-title">Hello categories</h1>
@@ -81,15 +82,15 @@ closeModal=()=> {
 					className="col-lg-9 col-md-12 col-sm-12 align-self-center search-category"
 					placeholder="Lancer votre recherche"
 				/>
-				{	(this.props._id===undefined)?
-					this.props.categories.filter(el => {
+				{	(_id===undefined)?
+					categories.filter(el => {
 						return (el.title.toLowerCase().indexOf(this.state.title.toLowerCase()) > -1)
 					  }).map((el, index) => (
 					<CategoryCard key={index} item={el} />
-				)):this.props.categories.filter(el=>(el._id===this.props._id))[0].souscategory.filter(el => {
+				)):categories.filter(el=>el._id===_id)[0].souscategory.filter(el => {
 					return (el.title.toLowerCase().indexOf(this.state.title.toLowerCase()) > -1)
 				  }).map((el, index) => (
-				<CategoryCard key={index} item={el} />
+				<CategoryCard key={index} item={el} categoryID={_id}/>
 			))
 			}
 				<div className="card-container col-lg-3 col-md-6 col-sm-12 add-card-icon">

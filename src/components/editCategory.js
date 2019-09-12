@@ -5,7 +5,7 @@ class EditCategory extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            categoryID:this.props.categories.filter(el=>el.souscategory.filter(el=>el._id.indexOf(this.props._id)> -1)[0])[0]._id
+            categoryID:""
         }
     }
     handleChangeTitle=(e)=>
@@ -21,20 +21,23 @@ class EditCategory extends Component {
 
     {(this.props.categories.filter(el=>(el._id===this.props._id))[0])?
     this.setState({
-           ...this.props.categories.filter(el=>(el._id===this.props._id))[0]
+           ...this.props.categories.filter(el=>(el._id===this.props._id))[0],
+           categoryID:""
         }):this.setState({
             ...(this.props.categories.map((el,i)=>
             (el.souscategory.filter(el=>el._id===this.props._id)))
-            .filter(el=>el.length!==0)[0])[0]
+            .filter(el=>el.length!==0)[0])[0],
+            categoryID:this.props.categories.filter(el=>el.souscategory.filter(el=>el._id.indexOf(this.props._id)> -1)[0])[0]._id
          })
     }
     edit=()=>{
-        (this.props.categories.map(el=>(el._id===this.props._id))[0])?
-        this.props.editCategoryReducer(this.state):this.props.editSousCategoryReducer(this.state)
+        (this.props.categories.filter(el=>(el._id===this.props._id))[0]!=={})?
+        this.props.editCategoryReducer(this.state):
+        this.props.editSousCategoryReducer(this.state)
     }
     render() { 
         console.log(this.state)
-        console.log(this.props.categories.filter(el=>el.souscategory.filter(el=>el._id.indexOf(this.props._id)> -1)[0])[0]._id)
+        console.log(this.props.categories.map(el=>el.souscategory.filter(el=>el._id!=="5d6f8c7ef71060653c98cab9")))
         return ( 
         <div className='add-category-container'>
             <h1>Edit Contact</h1>

@@ -13,6 +13,7 @@ let categories=[
               "picture":"/assets/img/pneu.jpg",
               "title": "Changement de pneu",
               "workerNumb":3,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2016-06-09T11:04:48 -01:00"
             },
             {
@@ -20,6 +21,7 @@ let categories=[
               "picture":"/assets/img/MecaniqueGenerale.jpg",
               "title": "Mécanique générale",
               "workerNumb":7,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-09-12T09:53:23 -01:00"
             },
             {
@@ -27,6 +29,7 @@ let categories=[
               "picture":"/assets/img/ElectriciteAuto.jpg",
               "title": "Panne électrique voiture",
               "workerNumb":4,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-08-01T04:35:33 -01:00"
             },
             {
@@ -34,6 +37,7 @@ let categories=[
               "picture":"/assets/img/garagisteAuto.jpg",
               "title": "Panne mécanique voiture",
               "workerNumb":8,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-10-15T09:14:12 -01:00"
             }
           ]
@@ -52,6 +56,7 @@ let categories=[
               "picture":"/assets/img/elecMaisons.jpg",
               "title": "Cablages électrique maison",
               "workerNumb":1,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2016-09-24T02:48:36 -01:00"
             },
             {
@@ -59,6 +64,7 @@ let categories=[
               "picture":"/assets/img/elecBatiments.jpg",
               "title": "Installation électricité batiments",
               "workerNumb":1,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2017-12-05T09:28:11 -01:00"
             }
           ]
@@ -77,6 +83,7 @@ let categories=[
               "picture":"/assets/img/CLIMATISATION.jpg",
               "title": "Climatisation",
               "workerNumb":5,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2016-12-11T02:17:49 -01:00"
             },
             {
@@ -84,6 +91,7 @@ let categories=[
               "picture":"/assets/img/ElectroRepair.jpg",
               "title": "Fours et cuisinières",
               "workerNumb":0,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2014-11-01T06:50:36 -01:00"
             },
             {
@@ -91,6 +99,7 @@ let categories=[
               "picture":"/assets/img/machineALaver.jpg",
               "title": "Machina a laver",
               "workerNumb":2,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-10-14T10:26:31 -01:00"
             },
             {
@@ -98,6 +107,7 @@ let categories=[
               "picture":"/assets/img/petitElect.jpg",
               "title": "Petite électroménagers",
               "workerNumb":0,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2016-09-17T05:15:20 -01:00"
             }
           ]
@@ -116,6 +126,7 @@ let categories=[
               "picture":"/assets/img/hadded.jpg",
               "title": "Forgeron générale",
               "workerNumb":8,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2017-09-25T07:24:50 -01:00"
             },
             {
@@ -123,6 +134,7 @@ let categories=[
               "picture":"/assets/img/soudeur.jpg",
               "title": "Soudage",
               "workerNumb":6,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2015-03-12T02:42:37 -01:00"
             }
           ]
@@ -141,6 +153,7 @@ let categories=[
               "picture":"/assets/img/aluminium.jpg",
               "title": "Menuisier alumiinium",
               "workerNumb":3,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2017-08-10T10:53:32 -01:00"
             },
             {
@@ -148,6 +161,7 @@ let categories=[
               "picture":"/assets/img/charpentier.jpg",
               "title": "Menuisier charpentier",
               "workerNumb":8,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2015-07-10T10:52:29 -01:00"
             }
           ]
@@ -176,6 +190,7 @@ let categories=[
               "picture":"/assets/img/Bicyclette.jpg",
               "title": "Bicyclette",
               "workerNumb":2,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2015-12-10T06:47:33 -01:00"
             },
             {
@@ -183,6 +198,7 @@ let categories=[
               "picture":"/assets/img/MotoCross.jpg",
               "title": "Moto cross",
               "workerNumb":2,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-03-21T09:32:56 -01:00"
             },
             {
@@ -190,6 +206,7 @@ let categories=[
               "picture":"/assets/img/MotoQuad.jpg",
               "title": "Moto quad",
               "workerNumb":1,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2017-08-09T05:25:38 -01:00"
             },
             {
@@ -197,6 +214,7 @@ let categories=[
               "picture":"/assets/img/MotoVitesse.jpg",
               "title": "Moto vitesse",
               "workerNumb":2,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2016-04-03T12:56:13 -01:00"
             }
           ]
@@ -225,6 +243,7 @@ let categories=[
               "picture":"/assets/img/Chodiere.jpg",
               "title": "Chodière",
               "workerNumb":1,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-10-24T11:07:43 -01:00"
             },
             {
@@ -232,6 +251,7 @@ let categories=[
               "picture":"/assets/img/Chauffage.jpg",
               "title": "Chauffage",
               "workerNumb":3,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-10-19T03:46:38 -01:00"
             },
             {
@@ -239,6 +259,7 @@ let categories=[
               "picture":"/assets/img/fuite.jpg",
               "title": "Fuites d'eau ou de gaz",
               "workerNumb":3,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-08-29T09:12:59 -01:00"
             },
             {
@@ -246,6 +267,7 @@ let categories=[
               "picture":"/assets/img/sanitaire.jpg",
               "title": "Problèmes de sanitaires",
               "workerNumb":2,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2019-04-12T04:50:25 -01:00"
             }
           ]
@@ -264,6 +286,7 @@ let categories=[
               "picture":"/assets/img/tablette.jpg",
               "title": "Tablette",
               "workerNumb":1,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2018-10-27T12:08:29 -01:00"
             },
             {
@@ -271,6 +294,7 @@ let categories=[
               "picture":"/assets/img/Telephone.jpg",
               "title": "Téléphone portable",
               "workerNumb":1,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2016-06-24T02:16:30 -01:00"
             },
             {
@@ -278,6 +302,7 @@ let categories=[
               "picture":"/assets/img/TV.jpg",
               "title": "TV",
               "workerNumb":2,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2016-06-24T02:16:30 -01:00"
             },
             {
@@ -285,6 +310,7 @@ let categories=[
               "picture":"/assets/img/Ordinateur.jpg",
               "title": "Ordinateur",
               "workerNumb":2,
+              "about": "Anim veniam laborum labore minim pariatur minim sint ex laborum cupidatat.\r\n",
               "registered": "2016-06-24T02:16:30 -01:00"
             }
           ]
@@ -299,30 +325,15 @@ let categories=[
             return (
                 state.concat(action.newcategory)
             )
-            case 'ADD_SOUSCATEGORY' :
-            return (
-                state.souscategory.concat(action.newcategory)
-            )
-      
             case 'EDIT_CATEGORY':
             return (
                 state.map(el=>el._id===action.editcategory._id? el=action.editcategory:el)
             )
-            case 'EDIT_SOUSCATEGORY':
-            return (
-                state.map(el=>el.souscategory.map(el=>el._id===action.editsouscategory._id? el=action.editsouscategory:el))
-            )
             case 'REMOVE_CATEGORY':
             return (
-              state.filter(el=>el._id!==action._id)
-            )
-            case 'REMOVE_SOUSCATEGORY':
-            return (
-              state.map(el=>el.souscategory.filter(el=>el._id!==action._id))
-            )
-            case 'UPDATE_CATEGORY':
-            return(
-                state=action.category
+              state.filter(el=>el._id!==action._id) || (state.filter(el=>el._id===action.categoryID)[0]).souscategory.filter(el=>el._id!==action._id)
+              // (state.filter(el=>el._id===action.categoryID)[0]).souscategory.filter(el=>el._id!==action._id)
+              // state.filter(el=>el.souscategory.filter(el=>el._id.indexOf(action._id)> -1)[0])[0].souscategory.filter(el=>el._id!==action._id)
             )
         default :
         return state
