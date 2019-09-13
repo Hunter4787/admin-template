@@ -19,21 +19,21 @@ class EditCategory extends Component {
     }
     componentWillMount=()=>
 
-    {(this.props.categories.filter(el=>(el._id===this.props._id))[0])?
+    {if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===1)
     this.setState({
            ...this.props.categories.filter(el=>(el._id===this.props._id))[0],
            categoryID:""
-        }):this.setState({
-            ...(this.props.categories.map((el,i)=>
-            (el.souscategory.filter(el=>el._id===this.props._id)))
-            .filter(el=>el.length!==0)[0])[0],
+        });if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===0)
+        this.setState({
+            ...this.props.categories.filter(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0].souscategory.filter(el=>el._id===this.props._id)[0],
             categoryID:this.props.categories.filter(el=>el.souscategory.filter(el=>el._id.indexOf(this.props._id)> -1)[0])[0]._id
          })
     }
     edit=()=>{
-        (this.props.categories.filter(el=>(el._id===this.props._id))[0]!=={})?
-        this.props.editCategoryReducer(this.state):
-        this.props.editSousCategoryReducer(this.state)
+    if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===1)
+   this.props.editCategoryReducer(this.state)
+   if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===0)
+   this.props.editSousCategoryReducer(this.state)
     }
     render() { 
         console.log(this.state)
@@ -78,11 +78,11 @@ const mapDispatchToProps=(dispatch)=>
                 editcategory
             })
         },
-        editSousCategoryReducer:editsouscategory=>
+        editSousCategoryReducer:editcategory=>
         {
             dispatch({
                 type:'EDIT_SOUSCATEGORY',
-                editsouscategory
+                editcategory
             })
         }
     }

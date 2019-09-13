@@ -319,6 +319,14 @@ let categories=[
   
   const categoryReducer=(state=categories,action)=>
   {
+    // if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===0)
+    //     this.setState({
+    //         ...this.props.categories.filter(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0].souscategory.filter(el=>el._id===this.props._id)[0]
+    //     }); if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===1)
+    // this.setState({
+    //         ...this.props.categories.filter(el=>el._id===this.props._id)[0]
+    //     })
+    console.log(action.editcategory);
     switch(action.type)
     {
             case 'ADD_CATEGORY' :
@@ -329,11 +337,17 @@ let categories=[
             return (
                 state.map(el=>el._id===action.editcategory._id? el=action.editcategory:el)
             )
+            case 'EDIT_SOUSCATEGORY':
+            return (
+              state.filter(el=>el._id===action.categoryID)[0].souscategory.map(el=>el._id===action.editcategory._id? el=action.editcategory:el)
+            )
             case 'REMOVE_CATEGORY':
             return (
-              state.filter(el=>el._id!==action._id) || (state.filter(el=>el._id===action.categoryID)[0]).souscategory.filter(el=>el._id!==action._id)
-              // (state.filter(el=>el._id===action.categoryID)[0]).souscategory.filter(el=>el._id!==action._id)
-              // state.filter(el=>el.souscategory.filter(el=>el._id.indexOf(action._id)> -1)[0])[0].souscategory.filter(el=>el._id!==action._id)
+            state.filter(el=>el._id!==action._id)
+            )
+            case 'REMOVE_SOUSCATEGORY':
+            return (
+              state.filter(el=>el._id===action.categoryID)[0].souscategory.filter(el=>el._id!==action._id)
             )
         default :
         return state
