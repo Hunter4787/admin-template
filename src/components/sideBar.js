@@ -27,6 +27,12 @@ class SideBar extends Component {
                                 <Link to='/profile'>Mes Coordonnées</Link>
                             </li>
                             <li>
+                                <Link to='/profile'>Expériences</Link>
+                            </li>
+                            <li>
+                        <Link to='/profile'><i className="fa fa-table "></i>Mes Annonces</Link>
+                             </li>
+                            <li>
                                 <Link to='/notifications'>Notifications</Link>
                             </li>
                             <li>
@@ -36,10 +42,10 @@ class SideBar extends Component {
                     </li>
 
                     <li>
-                        <Link to='/depanneur'><i className="fa fa-table "></i>Liste depanneur</Link>
+                        <Link to='/annonces'><i className="fa fa-table "></i>Liste des Annonces</Link>
                     </li>
                     <li>
-                        <Link to='/utilisateur'><i className="fa fa-edit "></i>Utilisateur </Link>
+                        <Link to='/packs'><i className="fa fa-edit "></i>Liste des Packs </Link>
                     </li>
                     <li>
                         <Link to='/gerer'><i className="fa fa-sitemap "></i>Gérer Tout<span className="fa arrow"></span></Link>

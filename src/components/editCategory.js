@@ -4,14 +4,12 @@ import {connect} from 'react-redux'
 class EditCategory extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            categoryID:""
-        }
+        this.state = { };
     }
     handleChangeTitle=(e)=>
     {
        this.setState({
-           title:e.target.value
+           titre:e.target.value
        })
     }
     handleChangeImg=(e)=>{
@@ -19,25 +17,22 @@ class EditCategory extends Component {
     }
     componentWillMount=()=>
 
-    {if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===1)
+    {if (this.props.categories.filter(el=>el.id_categorie.indexOf(this.props._id)> -1).length===1)
     this.setState({
-           ...this.props.categories.filter(el=>(el._id===this.props._id))[0],
-           categoryID:""
-        });if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===0)
+           ...this.props.categories.filter(el=>(el.id_categorie===this.props._id))[0]
+        });
+        if (this.props.souscategories.filter(el=>el.id_sous_categorie.indexOf(this.props._id)> -1).length===1)
         this.setState({
-            ...this.props.categories.filter(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0].souscategory.filter(el=>el._id===this.props._id)[0],
-            categoryID:this.props.categories.filter(el=>el.souscategory.filter(el=>el._id.indexOf(this.props._id)> -1)[0])[0]._id
+            ...this.props.souscategories.filter(el=>el.id_sous_categorie===this.props._id)[0]
          })
     }
     edit=()=>{
-    if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===1)
    this.props.editCategoryReducer(this.state)
-   if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===0)
    this.props.editSousCategoryReducer(this.state)
     }
     render() { 
         console.log(this.state)
-        console.log(this.props.categories.map(el=>el.souscategory.filter(el=>el._id!=="5d6f8c7ef71060653c98cab9")))
+        // console.log(this.props.categories.map(el=>el.souscategory.filter(el=>el._id!=="5d6f8c7ef71060653c98cab9")))
         return ( 
         <div className='add-category-container'>
             <h1>Edit Contact</h1>
@@ -46,15 +41,15 @@ class EditCategory extends Component {
                 <input
                 type='text'
                 name='title'
-                value={this.state.title}
+                value={this.state.titre}
                 onChange={this.handleChangeTitle}/>
              </div>
              <div>
              <h5>picture :</h5>
              <input  type='file' name='picture' onChange={this.handleChangeImg}/>
              </div>
-             <Link to={(this.props.categories.map(el=>(el._id===this.props._id))[0])?'/categories':`/sousCategory/${this.state.categoryID}`}>
-             <button onClick={()=>{this.edit()}}>Edit Category </button>
+             <Link to={(this.props.categories.filter(el=>el.id_categorie.indexOf(this.props._id)> -1).length===1) ? '/categories' : `/categories/${this.state.id_categorie}`}>
+             <button onClick={this.edit}>Edit Category </button>
              </Link>
         </div>
         );
@@ -64,7 +59,8 @@ class EditCategory extends Component {
 const mapStateToProps=(state)=>
 {
     return {
-        categories:state.categoryReducer
+        categories:state.categoryReducer,
+        souscategories: state.sousCategoryReducer
     }
 } 
 
@@ -78,11 +74,11 @@ const mapDispatchToProps=(dispatch)=>
                 editcategory
             })
         },
-        editSousCategoryReducer:editcategory=>
+        editSousCategoryReducer:editsouscategory=>
         {
             dispatch({
                 type:'EDIT_SOUSCATEGORY',
-                editcategory
+                editsouscategory
             })
         }
     }

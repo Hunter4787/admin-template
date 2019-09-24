@@ -10,33 +10,37 @@ class CategoryCard extends Component {
         this.state = {  }
     }
     remove=()=>{
-      if (this.props.categories.filter(el=>el._id.indexOf(this.props.item._id)> -1).length===0)
-      this.props.deleteSousCategoryReducer(this.props.item._id,this.props.categoryID);
-      
-      if (this.props.categories.filter(el=>el._id.indexOf(this.props.item._id)> -1).length===1)
-      this.props.deleteCategoryReducer(this.props.item._id)
+    if  (this.props.categories.filter(el=>el.id_categorie.indexOf(this.props.item.id_categorie)> -1).length===1)
+      this.props.deleteCategoryReducer(this.props.item.id_categorie);
+
+    if (this.props.souscategories.filter(el=>el.id_sous_categorie.indexOf(this.props.item.id_sous_categorie)> -1).length===1)
+      this.props.deleteSousCategoryReducer(this.props.item.id_sous_categorie)
     }
     render() { 
-      // console.log(this.props.item._id)
-      // console.log(this.props.categoryID)
+      console.log("hello "+ this.props.item.id_categorie)
         const {item} = this.props
         return ( <div className="col-lg-3 col-md-6 col-sm-12 card-container">
-        <button onClick={()=>this.remove()}>
-          <FontAwesome
-        className='super-crazy-colors'
-        name='times-circle'
-        size='2x'
-        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-      /></button>
+        <div className="row">
+              <button onClick={()=>this.remove()}>
+              <FontAwesome
+            className='super-crazy-colors'
+            name='times-circle'
+            size='2x'
+            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+          /></button>
+          <div>
+            <span className="text-right">N° Annonce:{this.props.annonces.filter(el=>el.id_categorie===this.props.item.id_categorie).length}</span>
+          </div>
+      </div>
       <Card>
         <CardBody>
-          <CardTitle><h4>{item.title}</h4></CardTitle>
-          <CardImg top width="100%" src={item.picture} alt="Card image cap" />
-          <Link to={`/sousCategory/${item._id}`}>
+          <CardTitle><h4>{item.titre}</h4></CardTitle>
+          <CardImg top width="100%" src={item.image} alt="Card image cap" />
+          <Link to={`/categories/${item.id_categorie}`}>
             <Button>plus de details</Button>
             </Link>
           <div>
-         <Link to={`/editCategory/${item._id}`}>
+         <Link to={(this.props.souscategories.filter(el=>el.id_sous_categorie.indexOf(item.id_sous_categorie)> -1).length===1)?`/editCategory/${item.id_sous_categorie}`:`/editCategory/${item.id_categorie}`}>
            <button><FontAwesome
         className='super-crazy-colors'
         name='edit'
@@ -45,7 +49,7 @@ class CategoryCard extends Component {
       />
       </button>
       </Link>
-         <Link to={`/cardInfos/${item._id}`}> <button><FontAwesome
+         <Link to={(this.props.souscategories.filter(el=>el.id_sous_categorie.indexOf(item.id_sous_categorie)> -1).length===1)?`/cardInfos/${item.id_sous_categorie}`:`/cardInfos/${item.id_categorie}`}> <button><FontAwesome
         className='super-crazy-colors'
         name='info-circle'
         size='2x'
@@ -59,11 +63,14 @@ class CategoryCard extends Component {
         </div> );
     }
 }
-const mapStateToProps = state => {
-	return {
-		categories: state.categoryReducer,
-	};
-};
+const mapStateToProps=(state)=>
+{
+    return {
+        categories:state.categoryReducer,
+        souscategories: state.sousCategoryReducer,
+        annonces: state.annonceReducer
+    }
+} 
 const mapDispatchToProps=(dispatch)=>
 {
     return {
@@ -74,12 +81,11 @@ const mapDispatchToProps=(dispatch)=>
                _id //es6
             })
         },
-        deleteSousCategoryReducer:(_id, categoryID)=>
+        deleteSousCategoryReducer:_id=>
         {
             dispatch({
                 type:'REMOVE_SOUSCATEGORY',
                _id, //es6
-               categoryID
             })
         }
     }

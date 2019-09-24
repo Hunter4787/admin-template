@@ -7,12 +7,12 @@ class InfosCategory extends Component {
     }
     componentWillMount=()=>
 
-    {if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===0)
+    {if (this.props.souscategories.filter(el=>el.id_sous_categorie.indexOf(this.props._id)> -1).length===1)
         this.setState({
-            ...this.props.categories.filter(el=>el.souscategory.filter(el=>el._id===this.props._id)[0])[0].souscategory.filter(el=>el._id===this.props._id)[0]
-        }); if (this.props.categories.filter(el=>el._id.indexOf(this.props._id)> -1).length===1)
+            ...this.props.souscategories.filter(el=>el.id_sous_categorie===this.props._id)[0]
+        });if (this.props.categories.filter(el=>el.id_categorie.indexOf(this.props._id)> -1).length===1)
     this.setState({
-            ...this.props.categories.filter(el=>el._id===this.props._id)[0]
+            ...this.props.categories.filter(el=>el.id_categorie===this.props._id)[0]
         })
     }
 
@@ -21,22 +21,22 @@ class InfosCategory extends Component {
         return (  
         <div className="InfosCategory-container">
             <div className="InfosCategory">
-              <h3>{this.state.title}</h3>
-              <h4>Créer le : {this.state.registered}</h4>
-              <h4>Nombre de dépanneurs disponibles: {this.state.workerNumb}</h4>
-              <p>{this.state.about} </p>
+              <h3>{this.state.titre}</h3>
+              <p>{this.state.description} </p>
             </div>
             <div>
-         <img src={this.state.picture} alt="category" />
+         <img src={this.state.image} alt="category" />
             </div>
         </div> 
         );
     }
 }
  
-const mapStateToProps = state => {
-	return {
-		categories: state.categoryReducer,
-	};
-};
+const mapStateToProps=(state)=>
+{
+    return {
+        categories:state.categoryReducer,
+        souscategories: state.sousCategoryReducer
+    }
+} 
 export default connect(mapStateToProps)(InfosCategory);

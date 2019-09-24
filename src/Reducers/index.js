@@ -1,6 +1,20 @@
 import {combineReducers} from 'redux'
-import workerReducer from './workerReducer'
+import packReducer from './packReducer'
+import expReducer from './expReducer'
+import packAnnonceReducer from './packAnnonceReducer'
+import annonceReducer from './annonceReducer'
+import sousCategoryReducer from './sousCategoryReducer'
 import userReducer from './userReducer'
+import imageReducer from './imageReducer'
 import categoryReducer from './categoryReducer'
 
-export default combineReducers({workerReducer,userReducer,categoryReducer})
+export default combineReducers({
+    packReducer,
+    userReducer,
+    categoryReducer,
+    sousCategoryReducer,
+    annonceReducer,
+    expReducer,
+    packAnnonceReducer,
+    imageReducer
+})
